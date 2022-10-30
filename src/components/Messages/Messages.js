@@ -2,27 +2,8 @@
 import React from 'react';
 import { BiSend } from 'react-icons/bi';
 
-var linkRegex = /(\b(https?):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim;
-
-function htmlDecode(input){
-  var e = document.createElement('div');
-  e.innerHTML = input;
-  console.log('e is', e)
-  return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
-}
-
 const Messages = ({ primaryColor }) => {
 
-  function createAnchorHTML(link) {
-    var a = document.createElement("a");
-    a.target = "_blank"; // NOTE: can remove or change the target here
-    a.href = link;
-    a.appendChild(document.createTextNode(link));
-    return a.outerHTML;
-  }
-
-  const formatText = (text) => text.replace(linkRegex, createAnchorHTML("$1"));
-  
   const TheirMessage = ({text}) => (
     <div className='flex'>
       <div className='bg-slate-200 px-2 rounded-t-md rounded-r-md mt-1 max-w-4/5 break-words text-left'>{text }</div>
