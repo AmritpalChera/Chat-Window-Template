@@ -19,7 +19,7 @@ const Messages = ({ primaryColor }) => {
   return (
     <div className='w-full h-full pb-12 flex flex-col'>
       <div className='flex-1 px-2 py-4 flex flex-col justify-end w-full overflow-hidden'>
-        <div className='h-full overflow-y-auto noScrollbar'>
+        <div className='overflow-y-auto justify-end noScrollbar'>
           <TheirMessage text="heyyy, I am Chatbot,  got any questions?"/>
           <OurMessage text="helooo"></OurMessage>
           <OurMessage text="yes, I wanted to ask how I do this SAMPLE task?"></OurMessage>
