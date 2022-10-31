@@ -1,8 +1,14 @@
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { BiSend } from 'react-icons/bi';
 
 const Messages = ({ primaryColor }) => {
+
+  const AlwaysScrollToBottom = () => {
+    const elementRef = useRef();
+    useEffect(() => elementRef.current.scrollIntoView());
+    return <div ref={elementRef} />;
+  };
 
   const TheirMessage = ({text}) => (
     <div className='flex'>
@@ -31,6 +37,7 @@ const Messages = ({ primaryColor }) => {
           <OurMessage text="No"></OurMessage>
           <TheirMessage text="Let me forward this convo to a real person." />
           <TheirMessage text="Can I get your email or wallet address so I can notify you once I have an answer?" />
+          <AlwaysScrollToBottom />
         </div>
         
       </div>
